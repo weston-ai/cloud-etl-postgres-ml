@@ -91,8 +91,7 @@ bash
 - git clone git@github.com:weston-ai/cloud-etl-postgres-ml
 - cd cloud-etl-postgres-ml
 - cp .env.example .env   # copies a template .env.example file to .env (avoids committing secrets)
-```supabase\_db\_url = postgresql://postgres:[password]@db.hhzuypfvmrisuumznjid.supabase.co:5432/postgres (This is the url for postgres\_ML database in Supabase)
-```
+*supabase\_db\_url = postgresql://postgres:[password]@db.hhzuypfvmrisuumznjid.supabase.co:5432/postgres (This is the url for postgres\_ML database in Supabase)*
 - pip install -r requirements.txt  # installs Python dependencies listed in requirements.txt
 
 ### 2: Explore Raw Data in DuckDB (Colab)
