@@ -101,12 +101,14 @@ bash
 
 ### 3: Clean and Upload to Supabase
 bash
+
 python scripts/upload_to_supabase.py
 - connects to supabase via .env
 - Loads cleaned CSVs into Supabase PostgreSQL tables
 
 ### 4: Launch Dashboard
 bash
+
 cd streamlit
 streamlit run app.py
 
