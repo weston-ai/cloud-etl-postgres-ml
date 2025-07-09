@@ -8,7 +8,7 @@ This project showcases a **modular, cloud-native ETL and analytics pipeline** us
 - Explore and clean datasets using DuckDB SQL in Google Colab 
 - Load cleaned data into a Supabase-hosted PostgreSQL database  
 - Visualize insights via an interactive Streamlit dashboard  
-- Maintain a portable, lightweight data science stack from anywhere (home or trail)
+- Maintain a portable, lightweight data science stack from anywhere
 - Use PyCharm for heavy dev-op scripting to control script modularity and scalability
 
 ---
@@ -85,13 +85,13 @@ cloud-etl-postgres-ml/
 
 ## How to use this project
 
-### 1: Clone and Set up
+### 1: Clone and Set Up
 bash
 
 - git clone git@github.com:weston-ai/cloud-etl-postgres-ml
 - cd cloud-etl-postgres-ml
 - cp .env.example .env   # copies a template .env.example file to .env (avoids committing secrets)
-*supabase\_db\_url = postgresql://postgres:[password]@db.hhzuypfvmrisuumznjid.supabase.co:5432/postgres (This is the url for postgres\_ML database in Supabase)*
+    - E.G. *supabase\_db\_url = postgresql://postgres:[password]@db.hhzuypfvmrisuumznjid.supabase.co:5432/postgres (This is the url for postgres\_ML database in Supabase)*
 - pip install -r requirements.txt  # installs Python dependencies listed in requirements.txt
 
 ### 2: Explore Raw Data in DuckDB (Colab)
@@ -118,8 +118,8 @@ streamlit run app.py
 
 ## Contact
 Made by Chris Weston
-*Data Science* | *PostgreSQL* | *Lightweight ML*
-Github Repo -- https://github.com/weston-ai/cloud-etl-postgres-ml
+- *Data Science* | *PostgreSQL* | *Lightweight ML*
+- Github Repo -- https://github.com/weston-ai/cloud-etl-postgres-ml
 
 
 
