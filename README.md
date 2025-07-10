@@ -34,29 +34,30 @@ This project emphasizes a **modular, SQL-centric, cloud-native analytics pipelin
 - **Supabase (PostgreSQL)** — Secure cloud-hosted PostgreSQL backend for storing cleaned, validated production datasets.  
 - **Google Drive** — Cloud storage for raw and cleaned CSVs during intermediate ETL stages.
 
+### 👨‍💻 Development & Testing Workflow
+
+- **PyCharm + JupyterLab (Linux WSL2)** — Heavy-duty modular development in a full IDE with a Unix-native environment.  
+- **PostgresSQL (Linux WSL2)** - SQL database for local testing to simulate Supabase
+- **Git + GitHub** — Full version control using `main`, `dev`, and modular feature branches.
+
 ### 🧠 Machine Learning
 
 - **scikit-learn** — For ML pipelines: classification, regression, clustering, and evaluation.  
 - **PyTorch** — For future deep learning use cases, especially time-series and tabular neural networks.
 
-### 👨‍💻 Development Workflow
-
-- **VSCode** — Lightweight IDE for quick edits, cloud or local.  
-- **PyCharm (Linux WSL2)** — Heavy-duty modular development in a full IDE with a Unix-native environment.  
-- **Git + GitHub** — Full version control using `main`, `dev`, and modular feature branches.
-
 ---
 
 ## 🌿 Git Branch Structure
 
-| Branch Name              | Purpose                                                    |
-|--------------------------|-------------------------------------------------------------|
-| `main`                   | ✅ Production-ready, deployable branch                      |
-| `dev`                    | 🧪 General development and integration staging branch        |
-| `duckdb-analytics`       | 🔍 Colab notebooks for DuckDB-based SQL exploratory analysis |
-| `etl-drive-to-supabase`  | 🔄 Python scripts for data cleaning + Supabase uploading     |
-| `streamlit-dashboard`    | 📊 Frontend dashboard for analytics and visual exploration   |
-| `ml-modeling` *(optional)* | 🤖 ML pipelines based on Supabase data                   |
+| Branch Name                 | Purpose                                                 |
+|-----------------------------|---------------------------------------------------------|
+| `main`                      | Production-ready, deployable branch                     |
+| `dev`                       | General development and integration staging branch      |
+| `extract-clean-save`        | Python scripts for cleaning raw data + save to Drive    |
+| `transform-duckdb-sql`      | Python scripts and notebooks for use-case-specific SQL  |
+| `load-to-supabase`          | Python scripts and notebooks uploading to Supabase      |
+| `streamlit-sqlalchemy-dash` | Dashboard + SQL bridge for use-case analytics and vis   |
+| `ml-modeling`               | ML pipelines based on Supabase data                     |
 
 ---
 
@@ -83,6 +84,8 @@ cloud-etl-postgres-ml/
 └── README.md                  # You are here.
 ```
 
+---
+
 ## How to use this project
 
 ### 1: Clone and Set Up
@@ -95,14 +98,14 @@ bash
 - pip install -r requirements.txt  # installs Python dependencies listed in requirements.txt
 
 ### 2: Explore Raw Data in DuckDB (Colab)
-- Open notebooks/eda_duckdb_colab.ipynb
+- Open notebooks/eda\_duckdb\_colab.ipynb
 - Mount Google Drive
 - Run SQL queries on raw CSVs using DuckDB directly
 
 ### 3: Clean and Upload to Supabase
 bash
 
-python scripts/upload_to_supabase.py
+python scripts/upload\_to\_supabase.py
 - connects to supabase via .env
 - Loads cleaned CSVs into Supabase PostgreSQL tables
 
@@ -122,10 +125,3 @@ streamlit run app.py
 Made by Chris Weston
 - *Data Science* | *PostgreSQL* | *Lightweight ML*
 - Github Repo -- https://github.com/weston-ai/cloud-etl-postgres-ml
-
-
-
-
-
-
-
