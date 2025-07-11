@@ -123,5 +123,5 @@ streamlit run app.py
 
 ## Contact
 Made by Chris Weston
-- *Data Science* | *PostgreSQL* | *Lightweight ML*
+- *Data Scientist* | *PostgreSQL ETL Pipeline Engineer* | *Lightweight Analytics & ML*
 - Github Repo -- https://github.com/weston-ai/cloud-etl-postgres-ml
