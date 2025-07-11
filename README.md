@@ -49,15 +49,15 @@ This project emphasizes a **modular, SQL-centric, cloud-native analytics pipelin
 
 ## 🌿 Git Branch Structure
 
-| Branch Name                 | Purpose                                                 |
-|-----------------------------|---------------------------------------------------------|
-| `main`                      | Production-ready, deployable branch                     |
-| `dev`                       | General development and integration staging branch      |
-| `extract-clean-save`        | Python scripts for cleaning raw data + save to Drive    |
-| `transform-duckdb-sql`      | Python scripts and notebooks for use-case-specific SQL  |
-| `load-to-supabase`          | Python scripts and notebooks uploading to Supabase      |
-| `streamlit-sqlalchemy-dash` | Dashboard + SQL bridge for use-case analytics and vis   |
-| `ml-modeling`               | ML pipelines based on Supabase data                     |
+| Branch Name                 | Purpose                                                    |
+|-----------------------------|------------------------------------------------------------|
+| `main`                      | Production-ready, deployable branch                        |
+| `dev`                       | General development and integration staging branch         |
+| `extract-clean-save`        | .py + .ipynb for extracting, cleaning, and saving to Drive |
+| `transform-duckdb-sql`      | .py + .ipynb for creating use-case-specific tables         |
+| `load-to-supabase`          | .py + .ipynb for uploading tables to Supabase              |
+| `streamlit-sqlalchemy-dash` | Dashboard + SQL/Supabase bridge for analytics and vis      |
+| `ml-modeling`               | ML pipelines based on Supabase data                        |
 
 ---
 
