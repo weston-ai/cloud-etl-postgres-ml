@@ -1,21 +1,20 @@
 # 🌐 cloud-etl-postgres-ml
 
-This project showcases a **modular, cloud-native ETL and analytics pipeline** using Google Drive, DuckDB, Supabase (PostgreSQL), and Streamlit — all orchestrated from Colab and GitHub.
+This project showcases a **modular, cloud-native ETL and analytics pipeline** using Google Drive, DuckDB, and Supabase (PostgreSQL) — all orchestrated from Colab and GitHub.
 
 ## 📌 Project Goals
 
-- Ingest raw CSV data from Google Drive  
-- Explore and clean datasets using DuckDB SQL in Google Colab 
-- Load cleaned data into a Supabase-hosted PostgreSQL database  
-- Visualize insights via an interactive Streamlit dashboard  
+- Ingest raw data from Google Drive; clean and normalize tables for Postgres structure
+- Filter and transform tables via DuckDB SQL in Google Colab, using a use-case query logic 
+- Load structured tables into a Supabase-hosted PostgreSQL database  
 - Maintain a portable, lightweight data science stack from anywhere
-- Use PyCharm for heavy dev-op scripting to control script modularity and scalability
+- Use PyCharm and JupyterLab for heavy dev-op testing (modularity, scalability, visualization, stats, and ML)
 
 ---
 
 ## 🧠 System Architecture & Tool Roles
 
-This project emphasizes a **modular, SQL-centric, cloud-native analytics pipeline** — blending Python, SQL, and machine learning workflows with a lightweight, mobile-friendly infrastructure.
+This project emphasizes a **modular, SQL-centric, cloud-native analytics pipeline** — blending Python, SQL, statistics, and machine learning workflows with a lightweight, mobile-friendly infrastructure.
 
 ### 🔧 Programming + Orchestration
 
@@ -31,33 +30,44 @@ This project emphasizes a **modular, SQL-centric, cloud-native analytics pipelin
 
 ### 🗄️ Cloud Data Infrastructure
 
-- **Supabase (PostgreSQL)** — Secure cloud-hosted PostgreSQL backend for storing cleaned, validated production datasets.  
+- **Supabase (PostgreSQL)** — Secure cloud-hosted PostgreSQL backend for storing cleaned, validated production datasets.
 - **Google Drive** — Cloud storage for raw and cleaned CSVs during intermediate ETL stages.
 
 ### 👨‍💻 Development & Testing Workflow
 
 - **PyCharm + JupyterLab (Linux WSL2)** — Heavy-duty modular development in a full IDE with a Unix-native environment.  
-- **PostgresSQL (Linux WSL2)** - SQL database for local testing to simulate Supabase
+- **PostgresSQL (Linux WSL2)** - SQL database for local testing to simulate Supabase.
 - **Git + GitHub** — Full version control using `main`, `dev`, and modular feature branches.
 
-### 🧠 Machine Learning
+### 🧠 Statistics & Machine Learning
+ 
+- **statsmodels** - For linear/logistic regression, ANOVA, time series, and model diagnostics.
+- **scikit-learn** — For ML pipelines: test/train split, transform/encode, classification, and clustering. 
+- **PyTorch / TensorFlow** — For future deep learning use cases, especially time-series and tabular neural networks.
 
-- **scikit-learn** — For ML pipelines: classification, regression, clustering, and evaluation.  
-- **PyTorch** — For future deep learning use cases, especially time-series and tabular neural networks.
+### 🔍 Visualization & Data Exploration (Streamlit-friendly)
+
+- **plotly** - Interactive charting in Streamlit; great for user-defined dashboards
+- **seaborn/matplotlib** - Automate custom plotting and visualization of outputs
+- **altair** - Clean, declarative plotting; nice for statistical overlays and rule-based charts
+- **ydata-profiling/pandas** - Embedded HTML reporting; great for EDA and validating data integrity
+- **sweetviz** - Embedded HTML reporting; perfect for "before/after" pipeline analysis and comparison plots
 
 ---
 
 ## 🌿 Git Branch Structure
 
-| Branch Name                 | Purpose                                                         |
-|-----------------------------|-----------------------------------------------------------------|
-| `main`                      | Production-ready, deployable branch                             |
-| `dev`                       | General development and integration staging branch              |
-| `extract-clean-save`        | .py + .ipynb for extracting, cleaning, and saving to Drive      |
-| `transform-duckdb-sql`      | .py + .ipynb for creating use-case-specific tables              |
-| `load-to-supabase`          | .py + .ipynb for uploading tables to Supabase                   |
-| `streamlit-sqlalchemy-dash` | Dashboard + SQL/Supabase bridge for analytics and visualization |
-| `ml-modeling`               | ML pipelines based on Supabase data                             |
+| Branch Name                  | Purpose                                                                     |
+|------------------------------|-----------------------------------------------------------------------------|
+| `main`                       | Production-ready, deployable branch                                         |
+| `dev`                        | General development and integration staging branch                          |
+| `etl/extract-validate-clean` | Scripts for extracting, validating, and cleaning data (Postgres coherent)   |
+| `etl/duckdb-sql-filtering`   | Scripts for narrowing the use-case-specific scope of tables                 |
+| `etl/transform-enrich`       | Scripts for transforming and enriching data (tabular and geospatial)        |
+| `etl/load-to-supabase`       | Scripts for uploading structured tables to Supabase                         |
+| `model/stats-ml`             | Scripts for statistics and ML pipelines based on Supabase data              |
+| `vis/visualize-explore`      | Scripts for visualizing and exploring data and outputs from stats/ML        |     
+| `docs/workflow-setup`        | Documentation about ETL workflows and setup instructions                    | 
 
 ---
 
@@ -76,8 +86,6 @@ cloud-etl-postgres-ml/
 │   └── supabase_helpers.py    # DB connection and validation tools
 ├── sql/
 │   └── schema.sql             # Optional: PostgreSQL schema
-├── streamlit/
-│   └── app.py                 # Interactive dashboard UI
 ├── .env.example               # Template for Supabase DB credentials
 ├── .gitignore                 # Ignore sensitive and generated files
 ├── requirements.txt           # Python package dependencies
@@ -109,12 +117,6 @@ python scripts/upload\_to\_supabase.py
 - connects to supabase via .env
 - Loads cleaned CSVs into Supabase PostgreSQL tables
 
-### 4: Launch Dashboard
-bash
-
-cd streamlit
-streamlit run app.py
-
 ## Notes
 - Emphasizes clarity, modularity, and portability
 - Can be designed to work entirely from a cloud-based stack (Colab, Supabase, Github, Google Drive)
@@ -123,5 +125,5 @@ streamlit run app.py
 
 ## Contact
 Made by Chris Weston
-- *Data Scientist & Engineer* | *Postgres ETL Pipelines* | *Lightweight Analytics & ML*
+- *Data Engineer & Data Scientist* | *Postgres ETL Pipelines* | *Lightweight Analytics & ML*
 - Github Repo -- https://github.com/weston-ai/cloud-etl-postgres-ml
