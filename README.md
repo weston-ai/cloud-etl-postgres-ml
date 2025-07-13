@@ -57,17 +57,16 @@ This project emphasizes a **modular, SQL-centric, cloud-native analytics pipelin
 
 ## 🌿 Git Branch Structure
 
-| Branch Name                  | Purpose                                                                     |
-|------------------------------|-----------------------------------------------------------------------------|
-| `main`                       | Production-ready, deployable branch                                         |
-| `dev`                        | General development and integration staging branch                          |
-| `etl/extract-validate-clean` | Scripts for extracting, validating, and cleaning data (Postgres coherent)   |
-| `etl/duckdb-sql-filtering`   | Scripts for narrowing the use-case-specific scope of tables                 |
-| `etl/transform-enrich`       | Scripts for transforming and enriching data (tabular and geospatial)        |
-| `etl/load-to-supabase`       | Scripts for uploading structured tables to Supabase                         |
-| `model/stats-ml`             | Scripts for statistics and ML pipelines based on Supabase data              |
-| `vis/visualize-explore`      | Scripts for visualizing and exploring data and outputs from stats/ML        |     
-| `docs/workflow-setup`        | Documentation about ETL workflows and setup instructions                    | 
+| Branch Name                   | Purpose                                                                                        |
+|-------------------------------|------------------------------------------------------------------------------------------------|
+| `main`                        | Production-ready, deployable branch                                                            |
+| `dev`                         | General development and integration staging branch                                             |
+| `etl/extract-validate-clean`  | Scripts for extracting, validating, and cleaning raw data (save to Google Drive)               |
+| `etl/transform-filter-enrich` | Scripts for mounting Google Drive to Colab + using DuckDB SQL to structure use-case tables     |
+| `etl/load-to-supabase`        | Scripts for uploading use-case tables to Supabase/PostgreSQL                                   |
+| `vis/visualize-explore`       | Scripts for visualizing and exploring data integrity, feature relationships, and model outputs |     
+| `model/stats-ml`              | Scripts for statistics and ML pipelines, using Supabase as a data source                       |
+| `docs/workflow-setup`         | Documentation about ETL workflows and setup instructions                                       | 
 
 ---
 
@@ -80,35 +79,37 @@ cloud-etl-postgres-ml/
 │   └── cleaned/                      # Cleaned datasets ready for Supabase
 │
 ├── etl/
-│   ├── extract_validate_clean/       # Extract, validate, and clean raw data (Postgres-coherent)
-│   ├── duckdb_sql_filtering/         # Filter tables with use-case-specific DuckDB SQL logic
-│   ├── transform_enrich/             # Transform and enrich tabular/geospatial data
-│   └── load_to_supabase/             # Upload structured tables to Supabase
+│   ├── extract_validate_clean/       # Extract and preprocess data for Postgres coherence
+│   ├── transform-filter-enrich/      # Use DuckDB SQL logic to develop use-case-specific tables
+│   └── load_to_supabase/             # Upload use-case-specific tables to Supabase
 │
 ├── model/
 │   └── stats_ml/                     # Statistical analysis and ML pipelines based on Supabase data
 │
 ├── vis/
-│   └── visualize_explore/            # Data visualization and exploration (EDA outputs, charts)
-│       ├── profiling_reports.py          # ydata-profiling and Sweetviz summaries
-│       ├── interactive_plotly.py         # Plotly dashboards and interactive exploration
-│       ├── stat_plots_seaborn.py         # Seaborn/Matplotlib-based statistical charts
-│       └── altair_viz.py                 # Altair-based overlays and declarative charts
+│   └── visualize\_explore/            # Data visualization and exploration (EDA outputs, charts)
+│       ├── profiling\_reports.py      # ydata-profiling and Sweetviz summaries
+│       ├── interactive\_plotly.py     # Plotly dashboards and interactive exploration
+│       ├── stat\_plots\_seaborn.py    # Seaborn/Matplotlib-based statistical charts
+│       └── altair\_viz.py             # Altair-based overlays and declarative charts
 │
-├── notebooks/
-│   ├── eda_duckdb_colab.ipynb       # DuckDB SQL queries and data exploration in Colab
-│   └── model_dev.ipynb              # Optional: ML and statistical model development
-│
-├── sql/
-│   └── schema.sql                   # Optional: PostgreSQL schema definitions
+├── scripts_notebooks/
+│   └─ raw_data_cleaning.py + .ipynb  # Extracting and cleaning raw data (aimed at Postgres compatibility) 
+│   └─ duckdb\_colab.py + .ipynb      # DuckDB SQL queries for structuring use-case tables
+│   └─ load_to_supabase.py + .ipynb   # Uploading structured data to Supabase 
+│   └─ model\stats_ml.py + .ipynb     # Statitical analysis and ML, using data from Supabase
+│   └─ visualize_explore.py + .ipynb  # Visualize and explore data integrity, features, and model outputs 
+│   
+── sql/
+│   └── schema.sql                     # Optional: PostgreSQL schema definitions
 │
 ├── docs/
-│   └── workflow_setup.md            # Documentation for setup, branching, and execution
+│   └── workflow\_setup.md             # Documentation for setup, branching, and execution
 │
-├── .env.example                     # Template for Supabase DB credentials (do not commit secrets)
-├── .gitignore                       # Ignore secrets, cache, notebook checkpoints, etc.
-├── requirements.txt                 # Python dependencies for ETL, EDA, and modeling
-└── README.md                        # Full project overview, setup, and usage guide
+├── .env.example                       # Template for Supabase DB credentials (do not commit secrets)
+├── .gitignore                         # Ignore secrets, cache, notebook checkpoints, etc.
+├── requirements.txt                   # Python dependencies for ETL, EDA, and modeling
+└── README.md                          # Full project overview, setup, and usage guide
 ```
 
 ---
