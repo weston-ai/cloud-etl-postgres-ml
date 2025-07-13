@@ -94,14 +94,14 @@ cloud-etl-postgres-ml/
 │       └── altair\_viz.py             # Altair-based overlays and declarative charts
 │
 ├── scripts_notebooks/
-│   └─ raw_data_cleaning.py + .ipynb  # Extracting and cleaning raw data (aimed at Postgres compatibility) 
+│   └─ raw_data_cleaning.py + .ipynb  # Extracting and cleaning raw data (formatted for Postgres) 
 │   └─ duckdb\_colab.py + .ipynb      # DuckDB SQL queries for structuring use-case tables
 │   └─ load_to_supabase.py + .ipynb   # Uploading structured data to Supabase 
 │   └─ model\stats_ml.py + .ipynb     # Statitical analysis and ML, using data from Supabase
-│   └─ visualize_explore.py + .ipynb  # Visualize and explore data integrity, features, and model outputs 
+│   └─ visualize_explore.py + .ipynb  # Vis/explore data integrity, features, and model outputs 
 │   
 ── sql/
-│   └── schema.sql                     # Optional: PostgreSQL schema definitions
+│   └── schema.sql                     # PostgreSQL schema definitions
 │
 ├── docs/
 │   └── workflow\_setup.md             # Documentation for setup, branching, and execution
