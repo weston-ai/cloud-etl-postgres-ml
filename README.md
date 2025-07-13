@@ -76,20 +76,39 @@ This project emphasizes a **modular, SQL-centric, cloud-native analytics pipelin
 ```text
 cloud-etl-postgres-ml/
 ├── data/
-│   ├── raw/                    # Raw CSVs from Google Drive
-│   └── cleaned/                # Cleaned datasets for Supabase
+│   ├── raw/                          # Raw CSVs from Google Drive
+│   └── cleaned/                      # Cleaned datasets ready for Supabase
+│
+├── etl/
+│   ├── extract_validate_clean/       # Extract, validate, and clean raw data (Postgres-coherent)
+│   ├── duckdb_sql_filtering/         # Filter tables with use-case-specific DuckDB SQL logic
+│   ├── transform_enrich/             # Transform and enrich tabular/geospatial data
+│   └── load_to_supabase/             # Upload structured tables to Supabase
+│
+├── model/
+│   └── stats_ml/                     # Statistical analysis and ML pipelines based on Supabase data
+│
+├── vis/
+│   └── visualize_explore/            # Data visualization and exploration (EDA outputs, charts)
+│       ├── profiling_reports.py          # ydata-profiling and Sweetviz summaries
+│       ├── interactive_plotly.py         # Plotly dashboards and interactive exploration
+│       ├── stat_plots_seaborn.py         # Seaborn/Matplotlib-based statistical charts
+│       └── altair_viz.py                 # Altair-based overlays and declarative charts
+│
 ├── notebooks/
-│   ├── eda_duckdb_colab.ipynb # DuckDB SQL queries and data exploration
-│   └── model_dev.ipynb        # Optional: ML notebook
-├── scripts/
-│   ├── upload_to_supabase.py  # ETL logic: upload cleaned data
-│   └── supabase_helpers.py    # DB connection and validation tools
+│   ├── eda_duckdb_colab.ipynb       # DuckDB SQL queries and data exploration in Colab
+│   └── model_dev.ipynb              # Optional: ML and statistical model development
+│
 ├── sql/
-│   └── schema.sql             # Optional: PostgreSQL schema
-├── .env.example               # Template for Supabase DB credentials
-├── .gitignore                 # Ignore sensitive and generated files
-├── requirements.txt           # Python package dependencies
-└── README.md                  # You are here.
+│   └── schema.sql                   # Optional: PostgreSQL schema definitions
+│
+├── docs/
+│   └── workflow_setup.md            # Documentation for setup, branching, and execution
+│
+├── .env.example                     # Template for Supabase DB credentials (do not commit secrets)
+├── .gitignore                       # Ignore secrets, cache, notebook checkpoints, etc.
+├── requirements.txt                 # Python dependencies for ETL, EDA, and modeling
+└── README.md                        # Full project overview, setup, and usage guide
 ```
 
 ---
