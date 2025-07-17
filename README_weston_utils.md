@@ -40,11 +40,9 @@ weston\_utils/
 ## 🚀 Installation
 
 From your local repo:
-
 ```bash
 pip install .
 ```
-
 OR, as an editable development package:
 ```bash
 pip install -e .[dev]
@@ -113,4 +111,4 @@ logger.info("ETL job initiated.")
 ## 📄 License
 
 MIT License (allows open re-use; just cite the creator)
-- Chris Weston; Python utility functions for ETL pipelines
+- Chris Weston - Python utility functions for ETL pipelines
