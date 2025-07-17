@@ -23,6 +23,7 @@ This package is a work in progress and will expand to include modular tools acro
 ---
 
 ## 📁 Package Layout
+
 ```text
 weston\_utils/
 ├── init.py
@@ -43,8 +44,8 @@ From your local repo:
 ```bash
 pip install .
 ```
-OR, as an editable development package:
 
+OR, as an editable development package:
 ```bash
 pip install -e .[dev]
 ```
@@ -54,8 +55,9 @@ pip install -e .[dev]
 
 # Example 1: Create a new PostgreSQL database with privileges
 
-from weston_utils.pgsql_db_utils import create_pg_database_with_all_privileges
+**from** weston\_utils**.**pgsql\_db\_utils **import** create\_pg\_database\_with\_all\_privileges
 
+```text
 create_pg_database_with_all_privileges(
     dbname="analytics_db",
     owner="analytics_user",
@@ -63,17 +65,20 @@ create_pg_database_with_all_privileges(
     template="template1",
     encoding="UTF8"
 )
+```
 
 # Example 2: Initialize a modular logger
 
-from weston_utils.logging_utils import configure_logging
+**from** weston\_utils**.**logging\_utils import configure\_logging
 
-configure_logging(
+```text
+configure\_logging(
         log_dir=local/path/to/logs,
         log_file=filename_you_want.log,
         level=logging.INFO
 )
 
+```
 logger.info("ETL job initiated.")
 
 ---
@@ -90,7 +95,7 @@ logger.info("ETL job initiated.")
 
 ## 🔗 Repository
 - Main Repository - https://github.com/weston-ai/cloud-etl-postgres-ml
-- Dev Branch - weston_utils
+- Dev Branch - weston\_utils
 
 ---
 
@@ -107,4 +112,5 @@ logger.info("ETL job initiated.")
 
 ## 📄 License
 
-MIT License (allows open re-use; just cite the creator (Chris Weston: Python utility functions for ETL pipelines)
+MIT License (allows open re-use; just cite the creator)
+- Chris Weston; Python utility functions for ETL pipelines
