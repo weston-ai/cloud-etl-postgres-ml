@@ -23,7 +23,7 @@ This package is a work in progress and will expand to include modular tools acro
 ---
 
 ## 📁 Package Layout
-
+```text
 weston\_utils/
 ├── init.py
 ├── pgsql\_db\_utils/
@@ -32,6 +32,7 @@ weston\_utils/
 ├── logging\_utils/
 │ ├── init.py
 │ └── ... # logging setup functions
+```
 
 ---
 
