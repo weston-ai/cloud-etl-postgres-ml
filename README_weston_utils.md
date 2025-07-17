@@ -55,7 +55,7 @@ pip install -e .[dev]
 
 ### Example 1: Create a new PostgreSQL database with privileges
 
-*from* **weston\_utils.pgsql\_db\_utils** *import* **create\_pg\_database\_with\_all\_privileges**
+from **weston\_utils.pgsql\_db\_utils** import **create\_pg\_database\_with\_all\_privileges**
 
 ```text
 create_pg_database_with_all_privileges(
@@ -69,7 +69,7 @@ create_pg_database_with_all_privileges(
 
 ### Example 2: Initialize a modular logger
 
-*from* **weston\_utils.logging\_utils** *import* **configure\_logging**
+from **weston\_utils.logging\_utils** import **configure\_logging**
 
 ```text
 configure\_logging(
