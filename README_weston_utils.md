@@ -43,10 +43,12 @@ From your local repo:
 ```bash
 pip install .
 ```
+
 OR, as an editable development package:
 ```bash
 pip install -e .[dev]
 ```
+
 ---
 
 ## 🛠️ Usage Examples
