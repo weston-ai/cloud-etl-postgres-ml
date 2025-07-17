@@ -1,4 +1,4 @@
-# weston_utils
+# weston\_utils
 
 A general-purpose Python utility package for reproducible workflows, database management, logging, and data engineering.
 
@@ -42,12 +42,12 @@ From your local repo:
 
 ```bash
 pip install .
-
+```
 OR, as an editable development package:
 
 ```bash
 pip install -e .[dev]
-
+```
 ---
 
 ## 🛠️ Usage Examples
