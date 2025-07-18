@@ -1,0 +1,74 @@
+# dev/.gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# C extensions
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environment / virtualenv / conda
+.venv/
+env/
+venv/
+ENV/
+*.env
+*.env.*
+*.conda
+*.yml
+*.yaml
+
+# VS Code / PyCharm / IDE settings
+.vscode/
+.idea/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Logs and system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Operating system files
+ehthumbs.db
+Icon?
+desktop.ini
+
+# SQLite / local DBs / Supabase caches
+*.db
+*.sqlite
+.supabase/
+.supabase/**
+
+# Project-specific data
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.arrow
+*.feather
+*.h5
+*.hdf5
+
+# Outputs, checkpoints, temp data
+checkpoints/
+outputs/
+temp/
+tmp/
+*.bak
+
+# Git-related
+*.swp
+*.swo
+*.orig
+
+# Colab & Drive-specific
+.drive_uploads/
