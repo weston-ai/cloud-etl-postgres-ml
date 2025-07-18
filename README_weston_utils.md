@@ -25,12 +25,12 @@ This package is a work in progress and will expand to include modular tools acro
 ## 📁 Package Layout
 
 ```text
-weston\_utils/
+weston_utils/
 ├── init.py
-├── pgsql\_db\_utils/
+├── pgsql_db_utils/
 │ ├── init.py
 │ └── ... # database functions
-├── logging\_utils/
+├── logging_utils/
 │ ├── init.py
 │ └── ... # logging setup functions
 ```
@@ -72,7 +72,7 @@ create_pg_database_with_all_privileges(
 from **weston\_utils.logging\_utils** import **configure\_logging**
 
 ```text
-configure\_logging(
+configure_logging(
         log_dir=local/path/to/logs,
         log_file=filename_you_want.log,
         level=logging.INFO
