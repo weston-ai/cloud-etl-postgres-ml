@@ -25,17 +25,17 @@ This package is a work in progress and will expand to include modular tools acro
 ## 📁 Package Layout
 
 ```text
-weston_utils/                     ← Top-level project folder (can be a Git repo)
+weston_utils/                     ← Top-level folder
 ├── pyproject.toml                ← Build and install metadata
 ├── README.md                     ← Package description
-├── weston_utils/                 ← Actual Python package (must match project name)
-│   ├── __init__.py               ← Required for package recognition
-│   ├── logging_utils/            ← Optional submodule
-│   │   ├── __init__.py           ← Individual module activations 
-│   │   └── logging_module_1.py   ← Example module for the logging_utils submodule 
+├── weston_utils/                 ← Package
+│   ├── __init__.py               ← Activation
+│   ├── logging_utils/            ← Subpackage
+│   │   ├── __init__.py           ← Activation 
+│   │   └── configure_logging.py  ← Module 
 │   ├── pgsql_db_utils/           
 │   │   ├── __init__.py
-│   │   ├── pgsql_module_1.py
+│   │   ├── clean_column.py
 ```
 
 ---
