@@ -33,9 +33,9 @@ weston_utils/                     ← Top-level folder
 │   ├── logging_utils/            ← Subpackage
 │   │   ├── __init__.py           ← Activation 
 │   │   └── configure_logging.py  ← Module 
-│   ├── pgsql_db_utils/           
-│   │   ├── __init__.py
-│   │   ├── clean_column.py
+│   ├── pgsql_db_utils/           ← Subpackage 
+│   │   ├── __init__.py           ← Activation 
+│   │   ├── clean_column.py       ← Module 
 ```
 
 ---
