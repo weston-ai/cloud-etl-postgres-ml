@@ -25,7 +25,7 @@ Execution Context:
 
 Requirements:
     - Must install weston_utils package into programming environment if not already installed
-        -e.g. run "pip install ." at the same level as pyproject.toml for weston_utils
+        -e.g. run "pip install ." at the same level as pyproject.toml for weston_utils (dev branch)
     - PostgreSQL user must have CREATEDB privileges
     - `.env` must contain a valid SQLAlchemy-compatible `PG_POSTGRES_URL`
 
