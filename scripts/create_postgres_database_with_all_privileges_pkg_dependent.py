@@ -70,16 +70,11 @@ from weston_utils.logging_utils import configure_logging
 
 # Database
 from weston_utils.postgres_utils import create_postgres_database, validate_postgres_general_identifier, write_database_url_to_env
-from sqlalchemy import create_engine, inspect, text
-from sqlalchemy.engine.url import make_url
-from sqlalchemy.exc import SQLAlchemyError
-from psycopg2 import sql
+from sqlalchemy import create_engine, text
 
 # File management
 import pandas as pd
 pd.set_option('display.max_columns', None)
-import re
-import time
 
 # ======================================
 ### Resolve project root
