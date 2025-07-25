@@ -1,52 +1,56 @@
+# create_postgres_database_with_all_privileges_pkg_dependent.py
+
 """
 Script Name: create_postgres_database_with_all_privileges_pkg_dependent.py
 
 Description:
     A production-ready script that programmatically provisions a new PostgreSQL database,
-    grants user privileges, writes the new connection URL to a `.env` file, and verifies
-    successful creation. Built with SQLAlchemy (raw SQL execution) and designed to run
-    in cross-platform environments including JupyterLab and WSL2.
+    assigns user privileges, writes the new connection URL to a `.env` file, and verifies
+    successful creation. Designed for cross-platform use in environments like JupyterLab,
+    WSL2, and Linux terminals. Built with SQLAlchemy (raw SQL execution) and custom utility modules.
 
 Key Features:
-    - Dynamically resolves the project root directory for robust path handling
+    - Resolves project root dynamically for portable path handling
     - Loads environment variables from a project-level `.env` file
-    - Validates manually-specified identifiers for PostgreSQL compatibility
-    - Creates a new PostgreSQL database using SQLAlchemy and psycopg2
-    - Assigns ownership and access privileges to a specified user
-    - Automatically generates and writes the new database URL to the `.env` file
-    - Verifies the new database by connecting and listing databases in the cluster
-    - Logs all actions to both console and a specified log file
+    - Validates identifiers for PostgreSQL compatibility
+    - Creates a PostgreSQL database using SQLAlchemy and psycopg2
+    - Grants ownership and full privileges to a specified user
+    - Auto-generates and appends the new DB URL to the `.env` file
+    - Verifies database creation by connecting and listing all databases
+    - Logs all steps to both the console and a rotating log file
 
 Execution Context:
-    - Works reliably in JupyterLab, WSL2, and Linux-based terminal environments
-    - Designed for modular integration into Airflow pipelines, cron jobs, or CI/CD tools
+    - Supports execution via JupyterLab, WSL2, or Linux terminal
+    - Can be modularly integrated into Airflow DAGs, cron jobs, or CI/CD workflows
 
 Requirements:
+    - Must install weston_utils package into programming environment if not already installed
+        -e.g. run "pip install ." at the same level as pyproject.toml for weston_utils
     - PostgreSQL user must have CREATEDB privileges
-    - SQLAlchemy-compatible connection string set as PG_POSTGRES_URL in `.env`
+    - `.env` must contain a valid SQLAlchemy-compatible `PG_POSTGRES_URL`
 
 Environment Variables:
-    PG_POSTGRES_URL       : Required. Connection string to the system-level Postgres database
-    PG_<DBNAME>_URL       : Auto-generated. URL for the new database written into `.env`
+    PG_POSTGRES_URL       : Required. Connection string to the system-level Postgres instance
+    PG_<DBNAME>_URL       : Auto-generated. New DB connection string added to `.env`
 
 Manually Defined Script Parameters:
-    - log_filename        : Name of the log file (without .log extension)
-    - log_folder_name     : Folder where logs are written
-    - LOG_LEVEL           : Logging verbosity (e.g., logging.INFO)
-    - new_database_name   : Name of the database to be created
-    - db_owner            : Username that will own the new database
+    log_filename          : Name of the log file (no `.log` extension)
+    log_folder_name       : Directory where logs will be stored
+    LOG_LEVEL             : Logging verbosity level (e.g., logging.INFO)
+    new_database_name     : Name of the new database to create
+    db_owner              : PostgreSQL user who will own the new database
 
 Logging:
     - Configured via `utils/logging_utils.py`
-    - Log files written to a subdirectory in the script's parent path
-    - Logs include step-by-step trace of the script’s execution and error stack traces
+    - Writes log file to a subdirectory alongside the script
+    - Logs include step-by-step progress and detailed error traces
 
 Typical Usage:
     1. Ensure `.env` contains a valid `PG_POSTGRES_URL`
     2. Optionally edit `new_database_name` and `db_owner` in the script
-    3. Run the script directly:
-           $ python create_postgres_database_sqlalchemy.py
-    4. Inspect `log_dev_dbase/log_dbase_dev.log` for execution details
+    3. Run the script:
+           $ python create_postgres_database_with_all_privileges_pkg_dependent.py
+    4. Inspect logs in `log_create_database_with_all_privileges.log` for results
 
 Author:
     Chris Weston
