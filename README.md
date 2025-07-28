@@ -64,6 +64,8 @@ This project emphasizes a **modular, SQL-centric, cloud-native analytics pipelin
 | `etl/extract-validate-clean`  | Scripts for extracting, validating, and cleaning raw data (save to Google Drive)               |
 | `etl/transform-filter-enrich` | Scripts for mounting Google Drive to Colab + using DuckDB SQL to structure use-case tables     |
 | `etl/load-to-supabase`        | Scripts for uploading use-case tables to Supabase/PostgreSQL                                   |
+| `database-mgmt`		| Scripts for conducting database administration tasks                                           |
+| `colab`                       | Scripts and notebooks for processing pipeline workflows in Google Colab			 |
 | `vis/visualize-explore`       | Scripts for visualizing and exploring data integrity, feature relationships, and model outputs |     
 | `model/stats-ml`              | Scripts for statistics and ML pipelines, using Supabase as a data source                       |
 | `docs/workflow-setup`         | Documentation about ETL workflows and setup instructions                                       | 
