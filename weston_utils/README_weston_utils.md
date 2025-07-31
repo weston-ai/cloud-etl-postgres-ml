@@ -60,11 +60,24 @@ __all__ = [
 	"create_postgres_database"
 	]
 
-**NOTE**: This __init__.py configuration approach allows you to use this type of import syntax (for e.g.):
+**NOTE**: This __init__.py configuration approach allows you to use the following import syntax (for e.g.):
 	
-	```script
-	from weston_utils.postgres_utils import clean_column
-	'''
+	```python
+	from weston_utils.io_utils import parallel_upload_copy_expert, _estimate_max_threads
+	```
+
+	The above syntax style is critical when a module (e.g. parallel_upload_copy_expert) consumes
+	a helper function (e.g. _estimate_max_threads). Additionally, it's sometimes nice to be able to 
+	import individual modules by name. 
+
+	ALTERNATIVELY: you can still do things like:
+	
+	```python
+	import weston_utils.postgres_utils as pg_utils 
+	```
+
+	The above method allows you to import subpackages and then call modules in-line during scripting
+	by using script syntax such as: "pg_utils.clean_column(df.columns)"
 ```
 ---
 
