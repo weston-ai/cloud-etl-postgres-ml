@@ -60,7 +60,11 @@ __all__ = [
 	"create_postgres_database"
 	]
 
-**NOTE**: In your main scripts, you can (for e.g.) use "from weston_utils.postgres_utils import clean_column"
+**NOTE**: This __init__.py configuration approach allows you to use this type of import syntax (for e.g.):
+	
+	```script
+	from weston_utils.postgres_utils import clean_column
+	'''
 ```
 ---
 
