@@ -60,7 +60,7 @@ __all__ = [
 	"create_postgres_database"
 	]
 
-- Inside of scripts, use "from weston_utils.postgres_utils import clean_column"
+- **NOTE**: Inside of scripts, use "from weston_utils.postgres_utils import clean_column"
 ```
 ---
 
@@ -73,7 +73,7 @@ pip install .
 
 OR, as an editable development package:
 ```bash
-pip install -e .[dev]
+pip install -e .
 ```
 
 ---
