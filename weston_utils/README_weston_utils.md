@@ -8,7 +8,7 @@ This package is a work in progress and will expand to include modular tools acro
 
 ## 📦 Features
 
-### `pgsql_db_utils`
+### `postgres_utils`
 - Create PostgreSQL databases using SQLAlchemy
 - Grant privileges and manage connections
 - Validate safe SQL identifiers and clean column names
@@ -48,7 +48,7 @@ weston_utils/                     ← Top-level folder
 
 ---
 
-## Configuring __init__.py in each utility folder (e.g. in the postgres\_utils folder)
+## Configuring '__init__.py' in each utility folder (e.g. in the postgres\_utils folder)
 ```text
 from .clean_column import clean_column
 from .infer_sql_type import infer_sql_type
