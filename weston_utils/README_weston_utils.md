@@ -8,15 +8,20 @@ This package is a work in progress and will expand to include modular tools acro
 
 ## 📦 Features
 
-### 📊 `pgsql_db_utils`
+### `pgsql_db_utils`
 - Create PostgreSQL databases using SQLAlchemy
 - Grant privileges and manage connections
 - Validate safe SQL identifiers and clean column names
 - Identify and partition time-invariant vs. time-variant columns (SQL and pandas approaches)
 
-### 📋 `logging_utils`
+### `logging_utils`
 - Centralized logging configuration for scripts and packages
 - Support for modular logger initialization with custom levels and formats
+
+### `io_utils`
+- Parallel importing of CSV files (using Dask multithreading)
+- Parallel uploading of dataframe to postgres table (using Psycopg2 & Multiprocessing)
+- Serial uploading of dataframes to postgres table (choosing RAM buffer or hard-disk)
 
 (Additional modules coming soon...)
 
@@ -30,12 +35,15 @@ weston_utils/                     ← Top-level folder
 ├── README.md                     ← Package description
 ├── weston_utils/                 ← Package
 │   ├── __init__.py               ← Activation (enables "from weston_utils import logging_utils .... OR postgres_utils")
-│   ├── logging_utils/            ← Subpackage
+│   ├── logging_utils/            ← Subpackage for logging utility modules
 │   │   ├── __init__.py           ← Activation 
 │   │   └── configure_logging.py  ← Module (example) 
-│   ├── postgres_utils/           ← Subpackage 
+│   ├── postgres_utils/           ← Subpackage for etl and database management
 │   │   ├── __init__.py           ← Activation 
 │   │   ├── clean_column.py       ← Module (example)
+│   ├── io_utils/                 ← Subpackage for file importing and file uploading
+│   │   ├── __init__.py           ← Activation 
+│   │   ├── smart_csv_loader.py   ← Module (example)
 ```
 
 ---
