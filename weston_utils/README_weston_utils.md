@@ -31,7 +31,7 @@ This package is a work in progress and will expand to include modular tools acro
 
 ```text
 weston_utils/                     ← Top-level folder
-├── pyproject.toml                ← Build and install metadata
+├── pyproject.toml                ← Build, install, and testing metadata
 ├── README.md                     ← Package description
 ├── weston_utils/                 ← Package
 │   ├── __init__.py               ← Activation (enables "from weston_utils import logging_utils .... OR postgres_utils")
