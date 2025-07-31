@@ -49,9 +49,10 @@ weston_utils/                     ← Top-level folder
 ---
 
 ## Configuring __init__.py in each utility folder (e.g. in the postgres\_utils folder)
-from .clean\_column import clean\_column
-from .infer\_sql\_type import infer\_sql\_type
-from .create\_postgres\_database import create\_postgres\_database
+```text
+from .clean_column import clean_column
+from .infer_sql_type import infer_sql_type
+from .create_postgres_database import create_postgres_database
 
 __all__ = [
 	"clean_column",
@@ -59,8 +60,8 @@ __all__ = [
 	"create_postgres_database"
 	]
 
-- Inside of scripts, use "from weston\_utils.postgres\_utils import clean\_column"
-
+- Inside of scripts, use "from weston_utils.postgres_utils import clean_column"
+```
 ---
 
 ## 🚀 Installation
