@@ -60,7 +60,7 @@ __all__ = [
 	"create_postgres_database"
 	]
 
-- **NOTE**: Inside of scripts, use "from weston_utils.postgres_utils import clean_column"
+**NOTE**: Inside of scripts, use "from weston_utils.postgres_utils import clean_column"
 ```
 ---
 
