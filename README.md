@@ -102,8 +102,8 @@ cloud-etl-postgres-ml/
 │   └─ model\stats_ml.py + .ipynb     # Statitical analysis and ML, using data from Supabase
 │   └─ visualize_explore.py + .ipynb  # Vis/explore data integrity, features, and model outputs 
 │   
-── sql/
-│   └── schema.sql                     # PostgreSQL schema definitions
+├── sql/
+│   └── schema.sql                     # PostgreSQL schema definitions  
 │
 ├── docs/
 │   └── workflow\_setup.md             # Documentation for setup, branching, and execution
@@ -112,6 +112,19 @@ cloud-etl-postgres-ml/
 ├── .gitignore                         # Ignore secrets, cache, notebook checkpoints, etc.
 ├── requirements.txt                   # Python dependencies for ETL, EDA, and modeling
 └── README.md                          # Full project overview, setup, and usage guide
+```
+
+---
+
+## Google Drive directory tree
+```text
+postgres_ML/
+├── data/
+│   └─ cleaned data/                   # Folder with data that have been formatted for Postgres (usually in CSV and parquet formats) 
+│   └─ raw data/                       # Folder with raw datasets that require formatting for Postgres
+│   └─  
+│   └─ 
+│   └─   
 ```
 
 ---
